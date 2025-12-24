@@ -1,0 +1,35 @@
+# Hello World Plugin
+# A simple example plugin demonstrating the RustPress plugin system
+
+[plugin]
+id = "hello-world"
+name = "Hello World"
+version = "1.0.0"
+description = "A simple example plugin that adds a greeting shortcode and widget"
+author = "RustPress Team"
+author_url = "https://rustpress.dev"
+homepage = "https://rustpress.dev/plugins/hello-world"
+license = "MIT"
+min_rustpress_version = "1.0.0"
+tags = ["example", "starter", "shortcode", "widget"]
+
+[plugin.capabilities]
+# What this plugin can do
+manage_options = true
+add_shortcodes = true
+add_widgets = true
+add_admin_pages = false
+
+[plugin.settings]
+# Default settings
+greeting_text = "Hello, World!"
+show_date = true
+custom_css = ""
+
+[plugin.hooks]
+# Hooks this plugin uses
+actions = ["init", "wp_head", "wp_footer"]
+filters = ["the_content", "the_title"]
+
+[dependencies]
+# No dependencies for this simple plugin
